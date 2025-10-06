@@ -1,15 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Form from "./components/Form";
+import "./index.css";
+
+const statuses = ["empty", "typing", "submitting", "success", "error"];
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-        <h1>hello</h1>
-    </>
-  )
+    return (
+        <div>
+            {statuses.map((status) => (
+                <Form key={status} status={status} />
+            ))}
+        </div>
+    );
 }
 
-export default App
+export default App;
